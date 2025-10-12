@@ -1,3 +1,3 @@
-function showMessage() {
-  document.getElementById("message").textContent = "✨ You clicked the button!";
+function activate() {
+  document.getElementById("status").textContent = "🔓 Access granted. Welcome to the system.";
 }
