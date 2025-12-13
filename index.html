@@ -1,49 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Next Generation Hacker</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>K-S Allies Tag Checker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    background:#000;
+    color:#00ff00;
+    font-family:Consolas,monospace;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+}
+.box{
+    width:420px;
+    border:2px solid #00ff00;
+    padding:20px;
+    box-shadow:0 0 20px #00ff00;
+}
+h1{text-align:center;margin-bottom:15px;}
+input,button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#000;
+    color:#00ff00;
+    border:1px solid #00ff00;
+}
+button{
+    background:#00ff00;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{background:#00cc00}
+.status{
+    margin-top:12px;
+    min-height:20px;
+}
+.section{
+    margin-top:20px;
+    font-size:13px;
+}
+.email{
+    margin-top:25px;
+    text-align:center;
+}
+.email a{
+    color:#000;
+    background:#00ff00;
+    padding:10px 15px;
+    display:inline-block;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>🕋ﷲ﷽</h1>
-    <h1>Next Generation Hacker</h1>
-    <p>Game <strong>War Commander</strong></p>
-    <p>Created by <strong>MhamadAli&Rayn Ellis</strong></p>
-  </header>
+<div class="box">
 
-  <section id="mod-menu">
-  <h2>🧰 Mod Menu</h2>
-  <ul>
-    <li><strong>1. Gold Hack</strong> — Repair Troops under 5m30s</li>
-    <li><strong>2. StealthRatio</strong> StealthRatio</li>
-    <li><strong>3. AI-CHEAT</strong> Control all Troops Alt + F</li>
-    <li><strong>4. Fast-Attack</strong> Fast Attack by A + Click</li>
-    <li><strong>5. New mine</strong> Repair All MINE 1 click</li>
-    <li><strong>6. Trophy Hack</strong> Hide And Show Trophys ALT + D</li>
-    <li><strong>7. Air-Swap-2.0</strong> Standard air to pvp</li>
-    <li><strong>8. Air-Swap-1.0</strong> Standard air to pvp</li>
-    <li><strong>9. MaxCapacity</strong> MaxCapacity 5920 </li>
-    <li><strong>10. Sector-Breach</strong> Disband PVE Platoons</li>
-    <li><strong>11. Relocate Fast </strong> Jump Boost — Super JUMP ALT+1</li>
-    <li><strong>12. Max Resource</strong> InstantResource Max ALT+2</li>
-    <li><strong>13. Move-Building</strong> Move-Building every time</li>
-    <li><strong>14. Open platoon</strong> Y or Alt+Y or click on help for faster</li>
-    <li><strong>15. open Missles Silo</strong> M or ALT + M</li>
-    <li><strong>16. open Merccamp</strong> M or ALT + C</li>
-    <li><strong>17. RepaiR Auto Map</strong> Repair map by ALT + 6</li>
-    <li><strong>18. ShadowOps</strong> shadowOpsWeek3x Coming Soon…</li>
-    <li><strong>19. CopyPlayerbase</strong> ALT + 9</li>
-    <li><strong>20. MoveBuilding</strong> ALT+ 8 for Copy Base</li>
-    <li><strong>21. MoveWalls</strong> ALT + 7 For Copy Base</li>
-    <li><strong>22.</strong> Coming Soon…</li>
-  </ul>
-</section>
+<h1>🟢 K-S ALLIES CHECKER 🟢</h1>
 
-  <footer>
-    <p>💬 Join our Discord: <a href="https://discord.gg/qznR4tpG" target="_blank">Click Here</a></p>
-  </footer>
+<input id="tag" placeholder="Enter Tag (max 6)">
+<button onclick="checkTag()">CHECK TAG</button>
+
+<div class="status" id="status"></div>
+
+<div class="section">
+<b>Approved Allies:</b><br>
+DRAM, K-S, KS01, ALPHA, TEAM7, HAMAA
+</div>
+
+<div class="email">
+<p>Want to join K-S alliance?</p>
+<a href="mailto:hamaali005566@gmail.com?subject=K-S Join Request&body=Hello, I want to join K-S alliance. My tag is:">
+📩 SEND EMAIL REQUEST
+</a>
+</div>
+
+</div>
+
+<script>
+/* ====== ALLIES ONLY (6 TAGS) ====== */
+const ALLIES = [
+  "DRAM",
+  "K-S",
+  "KS01",
+  "ALPHA",
+  "TEAM7",
+  "HAMAA"
+];
+
+function checkTag(){
+    const input = document.getElementById("tag");
+    const status = document.getElementById("status");
+    const tag = input.value.trim().toUpperCase();
+
+    // allow A-Z, 0-9, and -
+    if(!/^[A-Z0-9-]{1,6}$/.test(tag)){
+        status.textContent = "❌ Invalid tag (max 6, letters/numbers/-)";
+        return;
+    }
+
+    if(ALLIES.includes(tag)){
+        status.textContent = "🟢 ALLY CONFIRMED";
+    }else{
+        status.textContent = "⚪ NOT IN ALLIES LIST";
+    }
+}
+</script>
+
 </body>
 </html>
