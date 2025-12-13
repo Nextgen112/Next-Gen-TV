@@ -2,153 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>K-S Public Tag Checker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Next Generation Hackers</title>
 
 <style>
-    *{
-        box-sizing:border-box;
-        margin:0;
-        padding:0;
-        font-family: Consolas, monospace;
-    }
-    body{
-        background:#000;
-        color:#00ff00;
-        display:flex;
-        justify-content:center;
-        padding:30px;
-    }
-    .container{
-        width:100%;
-        max-width:700px;
-        border:2px solid #00ff00;
-        padding:20px;
-        box-shadow:0 0 25px #00ff00;
-    }
-    h1{
-        text-align:center;
-        margin-bottom:10px;
-        font-size:24px;
-    }
-    .subtitle{
-        text-align:center;
-        margin-bottom:20px;
-        font-size:14px;
-        opacity:0.9;
-    }
-    .section{
-        margin-top:25px;
-    }
-    .section h2{
-        font-size:18px;
-        margin-bottom:10px;
-        border-bottom:1px solid #00ff00;
-        padding-bottom:5px;
-    }
-    ul{
-        list-style:none;
-        padding-left:10px;
-    }
-    li{
-        margin:6px 0;
-        font-size:14px;
-    }
-    .hotkey{
-        opacity:0.85;
-    }
-    .discord{
-        margin-top:30px;
-        text-align:center;
-    }
-    .discord a{
-        display:inline-block;
-        margin-top:10px;
-        padding:10px 20px;
-        background:#00ff00;
-        color:#000;
-        text-decoration:none;
-        font-weight:bold;
-        border-radius:4px;
-        box-shadow:0 0 15px #00ff00;
-    }
-    .discord a:hover{
-        background:#00cc00;
-    }
-    footer{
-        margin-top:20px;
-        text-align:center;
-        font-size:12px;
-        opacity:0.8;
-    }
+body{
+    background:#000;
+    color:#00ff00;
+    font-family:Consolas,monospace;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+}
+.box{
+    width:420px;
+    border:2px solid #00ff00;
+    padding:20px;
+    box-shadow:0 0 20px #00ff00;
+}
+h1{text-align:center;margin-bottom:15px;}
+input,button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#000;
+    color:#00ff00;
+    border:1px solid #00ff00;
+}
+button{
+    background:#00ff00;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{background:#00cc00}
+.status{
+    margin-top:12px;
+    min-height:20px;
+}
+.section{margin-top:20px;font-size:13px;}
+.email{
+    margin-top:25px;
+    text-align:center;
+}
+.email a{
+    color:#000;
+    background:#00ff00;
+    padding:10px 15px;
+    display:inline-block;
+    text-decoration:none;
+    font-weight:bold;
+}
 </style>
 </head>
 
 <body>
-<div class="container">
+<div class="box">
 
-    <h1>██████ NEXT GENERATION HACKERS ██████</h1>
-    <div class="subtitle">
-        🕋 ﷲ﷽ <br>
-        Game: <strong>War Commander</strong><br>
-        Created by <strong>MhamadAli & Rayn Ellis</strong>
-    </div>
+<h1>⚔️ K-S TAG CHECKER ⚔️</h1>
 
-    <div class="section">
-        <h2>Main Features</h2>
-        <ul>
-            <li>• GOLD HACK — Repair troops under 5m30s</li>
-            <li>• New-Mine — Repair all mines (1 click)</li>
-            <li>• AirSwap</li>
-            <li>• SectorJump</li>
-            <li>• Missiles</li>
-            <li>• SectorBreach — Disband PVE platoons</li>
-        </ul>
-    </div>
+<input id="tag" placeholder="Enter K-S Tag (max 6)">
+<button onclick="checkTag()">CHECK TAG</button>
 
-    <div class="section">
-        <h2>Quick Access</h2>
-        <ul>
-            <li>• OpenPlatoons <span class="hotkey">[Y]</span></li>
-            <li>• OpenMissiles <span class="hotkey">[M]</span></li>
-            <li>• OpenMinfactory <span class="hotkey">[N]</span></li>
-            <li>• OpenGearStore <span class="hotkey">[G]</span></li>
-            <li>• OpenMerccamp <span class="hotkey">[C]</span></li>
-        </ul>
-    </div>
+<div class="status" id="status"></div>
 
-    <div class="section">
-        <h2>Hotkeys</h2>
-        <ul>
-            <li>• MaxResources — Alt+F</li>
-            <li>• SectorJump — Alt+1</li>
-            <li>• RemoveDamagedUnits — Alt+X</li>
-            <li>• RepairDamagedUnits — Ctrl+X</li>
-            <li>• Trophy Hide / Show — Alt+S</li>
-            <li>• AI Control Drones — Alt+J</li>
-            <li>• Unlock Last Hero — Alt+F2</li>
-            <li>• AutoRepair WorldMap — Alt+6</li>
-        </ul>
-    </div>
+<div class="section">
+<b>🟢 Allies:</b> KS01, ALPHA, TEAM7<br>
+<b>🔴 Enemies:</b> WAR99, DARKX, ZONE1
+</div>
 
-    <div class="section">
-        <h2>AirScript Tools</h2>
-        <ul>
-            <li>• AirScript — Alt+Q (Deploy DR_Agone + Obrators6x + Hero)</li>
-            <li>• AirScript — Alt+A (Deploy 10x + Onimik + Hero)</li>
-            <li>• AirAlpha-PvP — Alt+P</li>
-        </ul>
-    </div>
-
-    <div class="discord">
-        <h2>Join Our Discord Community</h2>
-        <a href="https://discord.gg/zbbx5CdF" target="_blank">🎮 JOIN DISCORD 🎮</a>
-    </div>
-
-    <footer>
-        © Next Generation Hackers — War Commander
-    </footer>
+<div class="email">
+<p>Want to join?</p>
+<a href="mailto:hamaali005566@gmail.com?subject=K-S Join Request&body=Hello, I want to join K-S alliance. My tag is:">
+📩 SEND EMAIL REQUEST
+</a>
+</div>
 
 </div>
+
+<script>
+const ALLIES = ["KS01","ALPHA","TEAM7"];
+const ENEMIES = ["WAR99","DARKX","ZONE1"];
+
+function checkTag(){
+    const tag = document.getElementById("tag").value.trim().toUpperCase();
+    const status = document.getElementById("status");
+
+    if(!/^[A-Z0-9]{1,6}$/.test(tag)){
+        status.textContent="❌ Invalid tag (max 6 letters/numbers)";
+        return;
+    }
+    if(ALLIES.includes(tag)){
+        status.textContent="🟢 ALLY TAG";
+    }else if(ENEMIES.includes(tag)){
+        status.textContent="🔴 ENEMY TAG";
+    }else{
+        status.textContent="⚪ UNKNOWN TAG";
+    }
+}
+</script>
+
 </body>
 </html>
