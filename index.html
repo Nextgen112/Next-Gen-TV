@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>K-S Public Tag Checker</title>
+<title>K-S Allies Tag Checker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -40,7 +40,10 @@ button:hover{background:#00cc00}
     margin-top:12px;
     min-height:20px;
 }
-.section{margin-top:20px;font-size:13px;}
+.section{
+    margin-top:20px;
+    font-size:13px;
+}
 .email{
     margin-top:25px;
     text-align:center;
@@ -59,20 +62,20 @@ button:hover{background:#00cc00}
 <body>
 <div class="box">
 
-<h1>⚔️ K-S TAG CHECKER ⚔️</h1>
+<h1>🟢 K-S ALLIES CHECKER 🟢</h1>
 
-<input id="tag" placeholder="Enter K-S Tag (max 6)">
+<input id="tag" placeholder="Enter Tag (max 6)">
 <button onclick="checkTag()">CHECK TAG</button>
 
 <div class="status" id="status"></div>
 
 <div class="section">
-<b>🟢 Allies:</b> KS01, ALPHA, TEAM7<br>
-<b>🔴 Enemies:</b> WAR99, DARKX, ZONE1
+<b>Approved Allies:</b><br>
+DRAM, K-S, KS01, ALPHA, TEAM7, HAMAA
 </div>
 
 <div class="email">
-<p>Want to join?</p>
+<p>Want to join K-S alliance?</p>
 <a href="mailto:hamaali005566@gmail.com?subject=K-S Join Request&body=Hello, I want to join K-S alliance. My tag is:">
 📩 SEND EMAIL REQUEST
 </a>
@@ -81,23 +84,31 @@ button:hover{background:#00cc00}
 </div>
 
 <script>
-const ALLIES = ["KS01","ALPHA","TEAM7"];
-const ENEMIES = ["WAR99","DARKX","ZONE1"];
+/* ====== ALLIES ONLY (6 TAGS) ====== */
+const ALLIES = [
+  "DRAM",
+  "K-S",
+  "KS01",
+  "ALPHA",
+  "TEAM7",
+  "HAMAA"
+];
 
 function checkTag(){
-    const tag = document.getElementById("tag").value.trim().toUpperCase();
+    const input = document.getElementById("tag");
     const status = document.getElementById("status");
+    const tag = input.value.trim().toUpperCase();
 
-    if(!/^[A-Z0-9]{1,6}$/.test(tag)){
-        status.textContent="❌ Invalid tag (max 6 letters/numbers)";
+    // allow A-Z, 0-9, and -
+    if(!/^[A-Z0-9-]{1,6}$/.test(tag)){
+        status.textContent = "❌ Invalid tag (max 6, letters/numbers/-)";
         return;
     }
+
     if(ALLIES.includes(tag)){
-        status.textContent="🟢 ALLY TAG";
-    }else if(ENEMIES.includes(tag)){
-        status.textContent="🔴 ENEMY TAG";
+        status.textContent = "🟢 ALLY CONFIRMED";
     }else{
-        status.textContent="⚪ UNKNOWN TAG";
+        status.textContent = "⚪ NOT IN ALLIES LIST";
     }
 }
 </script>
